@@ -11,8 +11,8 @@ WHERE "username" LIKE '%a%';
 UPDATE "accounts" SET "account_balance" = '10.00'
 WHERE "account_balance" = '0.00' AND "transactions_attempted" = '0';
 -- 4. How do you select all users that have attempted 9 or more transactions?
-
-
+SELECT * FROM "accounts"
+WHERE "transactions_attempted" >= '9';
 -- 5. How do you get the username and account balance of the 3 users with the highest balances, sorted highest to lowest balance? NOTE: Research LIMIT
 
 
