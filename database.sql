@@ -14,14 +14,16 @@ WHERE "account_balance" = '0.00' AND "transactions_attempted" = '0';
 SELECT * FROM "accounts"
 WHERE "transactions_attempted" >= '9';
 -- 5. How do you get the username and account balance of the 3 users with the highest balances, sorted highest to lowest balance? NOTE: Research LIMIT
-
-
+SELECT * FROM "accounts"
+ORDER BY "account_balance" DESC
+LIMIT 3;
 -- 6. How do you get the username and account balance of the 3 users with the lowest balances, sorted lowest to highest balance?
 SELECT * FROM "accounts"
-WHERE "account_balance" > '100';
+ORDER BY "account_balance" ASC
+LIMIT 3;
 -- 7. How do you get all users with account balances that are more than $100?
-
-
+SELECT * FROM "accounts"
+WHERE "account_balance" > '100';
 -- 8. How do you add a new account?
 
 
