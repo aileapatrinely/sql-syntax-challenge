@@ -29,4 +29,26 @@ INSERT INTO "accounts" ("username", "city", "transactions_completed", "transacti
 VALUES ('Potato', 'Spud City', '0', '0', '0');
 -- 9. The bank is losing money in Miami and Phoenix and needs to unload low transaction customers: How do you delete users that reside in miami OR phoenix and have completed fewer than 5 transactions.
 DELETE FROM "accounts"
-WHERE "city"= 'Miami' OR "city"= 'Pheonix' AND "transactions_completed"< '5';
+WHERE "city"= "transactions_completed"< '5' AND 'Miami' OR "city"= 'Pheonix';
+
+## Stretch Goal Questions
+--1. Anthony moved to Santa Fe. Update his location in the table.
+UPDATE "accounts" SET "city"='Santa Fe'
+WHERE "username"= 'Anthony';
+--2. Grace closed her account. Remove her from the database.
+She was already gone because of the way I originally typed number 9.
+--3. Travis made a withdrawal of $20,000. What's their new balance? NOTE: Research `RETURNING`
+UPDATE "accounts" 
+SET "account_balance" = account_balance - 20000
+WHERE "username"= 'Travis'
+RETURNING "account_balance";
+--4. The Bank needs to track last names. NOTE: Research `ALTER TABLE`
+ALTER TABLE "accounts"
+ADD "last_name" VARCHAR(20);
+--5. What is the total amount of money held by the bank? NOTE: Research `SUM`
+SELECT SUM("account_balance")
+FROM "accounts";
+--6. What is the total amount of money held by the bank at each location? NOTE: Research `GROUP BY`
+SELECT SUM("account_balance")
+FROM "accounts"
+GROUP BY "city";
