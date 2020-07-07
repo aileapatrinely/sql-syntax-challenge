@@ -49,6 +49,6 @@ ADD "last_name" VARCHAR(20);
 SELECT SUM("account_balance")
 FROM "accounts";
 --6. What is the total amount of money held by the bank at each location? NOTE: Research `GROUP BY`
-SELECT SUM("account_balance")
+SELECT SUM("account_balance"), "city"
 FROM "accounts"
 GROUP BY "city";
