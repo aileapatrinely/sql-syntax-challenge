@@ -17,8 +17,8 @@ WHERE "transactions_attempted" >= '9';
 
 
 -- 6. How do you get the username and account balance of the 3 users with the lowest balances, sorted lowest to highest balance?
-
-
+SELECT * FROM "accounts"
+WHERE "account_balance" > '100';
 -- 7. How do you get all users with account balances that are more than $100?
 
 
